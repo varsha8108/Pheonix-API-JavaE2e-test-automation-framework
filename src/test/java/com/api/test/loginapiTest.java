@@ -4,8 +4,11 @@ import static io.restassured.RestAssured.*;
 
 import static org.hamcrest.Matchers.*;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
+import com.api.utils.configmanager;
 import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
 import com.pojo.usercred;
 
@@ -15,10 +18,11 @@ import io.restassured.response.Response;
 
 public class loginapiTest {
 @Test
-	public void loginapitest() {
+	public void loginapitest() throws IOException {
+		
 		usercred u=new usercred("iamfd","password");
 		Response r=given()
-		.baseUri("http://64.227.160.186:9000/v1")
+		.baseUri(configmanager.getproperty("BASEURI"))
 		.contentType(ContentType.JSON)
 		.accept(ContentType.JSON)
 		.log().uri()
@@ -38,7 +42,7 @@ public class loginapiTest {
 		
 		System.out.println("Response"+r.asPrettyString());
 		System.out.println("Response time"+r.time());
-		System.out.println("Response time"+r.statusCode());
+		System.out.println("Response code"+r.statusCode());
 		
 	}
 	
