@@ -15,8 +15,9 @@ public class configmanager {
 	static {
 		// Read the properties from properties file in src/test/resources
 		//load the properties file to the object
-		env=System.getProperty("env");
+		env=System.getProperty("env","qa");
 		env=env.toLowerCase().trim();
+		
 		switch(env) {
 		case "qa": path="config/config.qa.properties";break;
 		case "dev": path="config/configdev.properties";break;

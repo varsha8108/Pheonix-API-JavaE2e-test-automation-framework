@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.api.test.loginapiTest">
+      <class name="com.api.test.masterapiTest">
         <methods>
-          <include name="loginapitest"/>
+          <include name="masterapitestnegative"/>
         </methods>
-      </class> <!-- com.api.test.loginapiTest -->
+      </class> <!-- com.api.test.masterapiTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
