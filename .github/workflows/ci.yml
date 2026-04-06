@@ -21,5 +21,13 @@ jobs:
         cache: maven
     - name: Execution of API test framework
       run: mvn test -DsuiteXmlFile=testng.xml -Denv=qa
+      
+    - name: Upload a Build Artifact
+      if: always()
+      uses: actions/upload-artifact@v3.2.2
+      with:
+        name: Surefire report
+        path: target/surefire-reports/
+        retention-days: 10
 
   
