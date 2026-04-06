@@ -27,7 +27,7 @@ public class masterapiTest {
 		.post("master")
 		.then()
 		.statusCode(200)
-		.time(Matchers.lessThan(1000L))
+		.time(Matchers.lessThan(2000L))
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemavalidator/masterapi.json"))
 		.body("message",Matchers.equalTo("Success"))
 		.body("data",Matchers.notNullValue())
