@@ -16,7 +16,7 @@ on:
         options: [qa,uat,dev]
         default: qa
         required: true
-          - 
+         
 jobs:
   test:
 
