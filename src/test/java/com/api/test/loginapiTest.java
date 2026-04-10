@@ -9,6 +9,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.api.utils.configmanager;
+import com.api.utils.specbuilder;
 import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
 import com.pojo.usercred;
 
@@ -22,19 +23,11 @@ public class loginapiTest {
 		
 		usercred u=new usercred("iamfd","password");
 		Response r=given()
-		.baseUri(configmanager.getproperty("BASEURI"))
-		.contentType(ContentType.JSON)
-		.accept(ContentType.JSON)
-		.log().uri()
-		.log().headers()
-		.log().method()
-		.log().body()
-		.body(u)
+		.spec(specbuilder.requestspec(u))
 		.when()
 		.post("login")
 		.then()
-		.statusCode(200)
-		.time(lessThan(2000L))
+		.spec(specbuilder.responsespecification())
 		.body("message",equalTo("Success"))
 		.body("data.token", notNullValue())
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemavalidator/loginresponseschema.json"))

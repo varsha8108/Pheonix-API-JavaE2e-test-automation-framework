@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.api.constants.Role;
 import com.api.utils.Authtoken;
 import com.api.utils.configmanager;
+import com.api.utils.specbuilder;
 
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -20,14 +21,11 @@ public class masterapiTest {
 	public void masterapitest() throws IOException {
 		
 		Response r=given()
-		.baseUri(configmanager.getproperty("BASEURI"))
-		.header("Authorization",Authtoken.gettoken(Role.FD))
-		.contentType(ContentType.JSON)
+		.spec(specbuilder.requestspecwithrole(Role.FD))
 		.when()
 		.post("master")
 		.then()
-		.statusCode(200)
-		.time(Matchers.lessThan(2000L))
+		.spec(specbuilder.responsespecification())
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemavalidator/masterapi.json"))
 		.body("message",Matchers.equalTo("Success"))
 		.body("data",Matchers.notNullValue())
@@ -50,13 +48,11 @@ public class masterapiTest {
 public void masterapitestnegative() throws IOException {
 		
 		Response r=given()
-		.baseUri(configmanager.getproperty("BASEURI"))
-		
-		.contentType(ContentType.JSON)
+		.spec(specbuilder.requestspec())
 		.when()
 		.post("master")
 		.then()
-		.statusCode(401)
+		.spec(specbuilder.responsespecification_invalidtoken(401))
 		.extract().response();
 		
 		System.out.println("Response code "+r.statusCode());

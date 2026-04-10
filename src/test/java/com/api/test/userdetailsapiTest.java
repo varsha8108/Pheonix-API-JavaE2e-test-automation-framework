@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.api.constants.Role;
 import com.api.utils.Authtoken;
 import com.api.utils.configmanager;
+import com.api.utils.specbuilder;
 
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -22,14 +23,11 @@ public class userdetailsapiTest {
 	@Test
 public void userdetailsapi() throws IOException {
 		Response r=given()
-		.baseUri(configmanager.getproperty("BASEURI"))
-		.header("Authorization", Authtoken.gettoken(Role.FD))
-		.contentType(ContentType.JSON)
+		.spec(specbuilder.requestspecwithrole(Role.FD))
 		.when()
 		.get("userdetails")
 		.then()
-		.statusCode(200)
-		.time(lessThan(2000L))
+		.spec(specbuilder.responsespecification())
 		.body("message",equalTo("Success"))
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemavalidator/userdetails.json"))
 		//.body("data.id",equalTo(4))
