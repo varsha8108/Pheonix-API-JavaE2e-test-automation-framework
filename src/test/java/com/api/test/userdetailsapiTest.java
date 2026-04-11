@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 
 public class userdetailsapiTest {
-	@Test
+	@Test(description = "Verify if userdetails api details is shown correctly",groups = {"api","Regression","Smoke"})
 public void userdetailsapi() throws IOException {
 		Response r=given()
 		.spec(specbuilder.requestspecwithrole(Role.FD))

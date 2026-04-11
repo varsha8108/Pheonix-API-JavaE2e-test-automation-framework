@@ -18,7 +18,7 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 
 public class countapiTest {
-	@Test
+	@Test(description = "Verify if the count api test displays the number of jobs created and pending for assignment and delivery",groups = {"api","Regression","Smoke"})
 
 	public void countapiTest() throws IOException  {
 		Response r=given()
@@ -40,7 +40,7 @@ public class countapiTest {
 		System.out.println("Response code" +r.statusCode());
 	}
 	
-	@Test
+	@Test(description = "Verify if the count api test does not display for invalid token",groups = {"api","Regression","Negative"})
 	public void countapiTestnegative() throws IOException  {
 		Response r=given()
 		.spec(specbuilder.requestspec())

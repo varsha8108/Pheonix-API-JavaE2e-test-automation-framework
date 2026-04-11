@@ -17,7 +17,12 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
 public class masterapiTest {
-	@Test
+	
+	
+	
+	
+	
+	@Test(description = "Verify if the master api details are displayed as expected",groups = {"api","Regression","Smoke"})
 	public void masterapitest() throws IOException {
 		
 		Response r=given()
@@ -44,7 +49,7 @@ public class masterapiTest {
 		
 	}
 	
-	@Test
+	@Test(description = "Verify if the master api details are not displayed when invalid token is passed",groups = {"api","Regression","Negative"})
 public void masterapitestnegative() throws IOException {
 		
 		Response r=given()

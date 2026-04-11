@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.*;
 
 import java.io.IOException;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.api.utils.configmanager;
@@ -18,10 +19,18 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
 public class loginapiTest {
-@Test
+	private usercred u;
+	
+	@BeforeMethod(description = "User credentials object creation")
+	public void setup() {
+		 u=new usercred("iamfd","password");
+	}
+	
+	
+@Test(description = "Verify if Login test for API is working as expected",groups = {"api","Regression","Smoke"})
 	public void loginapitest() throws IOException {
 		
-		usercred u=new usercred("iamfd","password");
+		
 		Response r=given()
 		.spec(specbuilder.requestspec(u))
 		.when()
