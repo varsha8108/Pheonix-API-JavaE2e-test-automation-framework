@@ -4,6 +4,7 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import com.api.constants.Role;
+import com.api.utils.datetime;
 import com.api.utils.specbuilder;
 import com.pojo.createjobapipayload;
 import com.pojo.customerpojo;
@@ -26,7 +27,7 @@ public class createjobapiTest {
 	public void createjobtest() throws IOException {
 	customerpojo customer=new customerpojo("Varsha","k","863-487-1098","863-427-1098","Dolly83@gmail.com","Dolly83@gmail.com");
 	customer_address customer_address=new customer_address("svamitva soul spring square", "ses123", "b street", "big bazaar", "bommanahalli", "560003", "India", "Karnataka");
-	customer_product customer_product=new customer_product("2026-02-01T20:00:00.000Z", "46505921665232", "46505921665232", "46505921665232", "2026-02-01T20:00:00.000Z", 3, 3);
+	customer_product customer_product=new customer_product(datetime.gettimepast(10), "46505921665299", "46505921665299", "46505921665299", datetime.gettimepast(10), 3, 3);
 	problems problem=new problems(1,"Battery issue");
 	List<problems> problemslist=new ArrayList();
 	problemslist.add(problem);
