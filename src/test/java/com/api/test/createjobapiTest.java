@@ -1,6 +1,7 @@
 package com.api.test;
 
 import org.hamcrest.Matchers;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.api.constants.Role;
@@ -23,15 +24,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class createjobapiTest {
-@Test
+	private createjobapipayload c;
+	
+	
+	@BeforeMethod(description = "Set up method for createjob payload")
+	public void createjobtestsetup() {
+		customerpojo customer=new customerpojo("Varsha","k","863-487-1098","863-427-1098","Dolly83@gmail.com","Dolly83@gmail.com");
+		customer_address customer_address=new customer_address("svamitva soul spring square", "ses123", "b street", "big bazaar", "bommanahalli", "560003", "India", "Karnataka");
+		customer_product customer_product=new customer_product(datetime.gettimepast(10), "46505921665210", "46505921665210", "46505921665210", datetime.gettimepast(10), 3, 3);
+		problems problem=new problems(1,"Battery issue");
+		List<problems> problemslist=new ArrayList();
+		problemslist.add(problem);
+		 c=new createjobapipayload(0,2,1,2,customer,customer_address,customer_product,problemslist);
+	}
+	
+	
+	
+	
+@Test(description = "Verify if the API create a job id successfully",groups = {"api","Regression","Smoke"})
 	public void createjobtest() throws IOException {
-	customerpojo customer=new customerpojo("Varsha","k","863-487-1098","863-427-1098","Dolly83@gmail.com","Dolly83@gmail.com");
-	customer_address customer_address=new customer_address("svamitva soul spring square", "ses123", "b street", "big bazaar", "bommanahalli", "560003", "India", "Karnataka");
-	customer_product customer_product=new customer_product(datetime.gettimepast(10), "46505921665299", "46505921665299", "46505921665299", datetime.gettimepast(10), 3, 3);
-	problems problem=new problems(1,"Battery issue");
-	List<problems> problemslist=new ArrayList();
-	problemslist.add(problem);
-	createjobapipayload c=new createjobapipayload(0,2,1,2,customer,customer_address,customer_product,problemslist);
+	
 	Response r=
 	given()
 	.spec(specbuilder.requestspecwithobject_role(Role.FD, c))

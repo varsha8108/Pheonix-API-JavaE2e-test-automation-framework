@@ -2,12 +2,25 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-11T12:07:31 GST" name="Default suite" finished-at="2026-04-11T12:07:37 GST" duration-ms="6288">
+  <suite started-at="2026-04-11T15:54:09 GST" name="Default suite" finished-at="2026-04-11T15:54:14 GST" duration-ms="5416">
     <groups>
+      <group name="Regression">
+        <method signature="createjobapiTest.createjobtest()[pri:0, instance:com.api.test.createjobapiTest@38cee291]" name="createjobtest" class="com.api.test.createjobapiTest"/>
+      </group> <!-- Regression -->
+      <group name="Smoke">
+        <method signature="createjobapiTest.createjobtest()[pri:0, instance:com.api.test.createjobapiTest@38cee291]" name="createjobtest" class="com.api.test.createjobapiTest"/>
+      </group> <!-- Smoke -->
+      <group name="api">
+        <method signature="createjobapiTest.createjobtest()[pri:0, instance:com.api.test.createjobapiTest@38cee291]" name="createjobtest" class="com.api.test.createjobapiTest"/>
+      </group> <!-- api -->
     </groups>
-    <test started-at="2026-04-11T12:07:31 GST" name="Default test" finished-at="2026-04-11T12:07:37 GST" duration-ms="6288">
+    <test started-at="2026-04-11T15:54:09 GST" name="Default test" finished-at="2026-04-11T15:54:14 GST" duration-ms="5416">
       <class name="com.api.test.createjobapiTest">
-        <test-method signature="createjobtest()[pri:0, instance:com.api.test.createjobapiTest@38cee291]" started-at="2026-04-11T12:07:31 GST" name="createjobtest" finished-at="2026-04-11T12:07:37 GST" duration-ms="6124" status="PASS">
+        <test-method is-config="true" signature="createjobtestsetup()[pri:0, instance:com.api.test.createjobapiTest@38cee291]" started-at="2026-04-11T15:54:09 GST" name="createjobtestsetup" description="Set up method for createjob payload" finished-at="2026-04-11T15:54:09 GST" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createjobtestsetup -->
+        <test-method signature="createjobtest()[pri:0, instance:com.api.test.createjobapiTest@38cee291]" started-at="2026-04-11T15:54:09 GST" name="createjobtest" description="Verify if the API create a job id successfully" finished-at="2026-04-11T15:54:14 GST" duration-ms="5305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createjobtest -->

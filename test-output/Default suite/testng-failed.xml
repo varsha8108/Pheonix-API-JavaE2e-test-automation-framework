@@ -6,6 +6,7 @@
       <class name="com.api.test.createjobapiTest">
         <methods>
           <include name="createjobtest"/>
+          <include name="createjobtestsetup"/>
         </methods>
       </class> <!-- com.api.test.createjobapiTest -->
     </classes>
