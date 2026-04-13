@@ -39,7 +39,7 @@ public class countapiTest {
 		System.out.println("Response code" +r.asPrettyString());
 		System.out.println("Response code" +r.statusCode());
 	}
-	
+	// negative tests
 	@Test(description = "Verify if the count api test does not display for invalid token",groups = {"api","Regression","Negative"})
 	public void countapiTestnegative() throws IOException  {
 		Response r=given()
