@@ -19,7 +19,7 @@ import static io.restassured.RestAssured.*;
 //comment
 public class countapiTest {
 	@Test(description = "Verify if the count api test displays the number of jobs created and pending for assignment and delivery",groups = {"api","Regression","Smoke"})
-
+//commit message
 	public void countapiTest() throws IOException  {
 		Response r=given()
 		.spec(specbuilder.requestspecwithrole(Role.FD))
@@ -39,7 +39,7 @@ public class countapiTest {
 		System.out.println("Response code" +r.asPrettyString());
 		System.out.println("Response code" +r.statusCode());
 	}
-	
+	// negative tests
 	@Test(description = "Verify if the count api test does not display for invalid token",groups = {"api","Regression","Negative"})
 	public void countapiTestnegative() throws IOException  {
 		Response r=given()
