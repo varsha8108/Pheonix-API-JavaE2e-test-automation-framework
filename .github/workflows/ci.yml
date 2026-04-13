@@ -42,7 +42,7 @@ jobs:
             echo "suiteXmlFile=${{ github.event.inputs.suiteXmlFile || 'testng.xml'}}" >> $GITHUB_OUTPUT
             echo "env=${{ github.event.inputs.env || 'qa'}}" >> $GITHUB_OUTPUT
     - name: Execution of API test framework
-      run: mvn test -DsuiteXmlFile="${{ github.event.inputs.suiteXmlFile }}" -Denv="${{ github.event.inputs.env }}"
+      run: mvn test -DsuiteXmlFile="${{ steps.default.outputs.suiteXmlFile }}" -Denv="${{ steps.default.outputs.env }}"
       
     - name: Upload a Build Artifact
       if: always()
