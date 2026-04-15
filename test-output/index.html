@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\USER\AppData\Local\Temp\testng-eclipse--1580545290\testng-customsuite.xml</span>
+                    <span>C:\Users\USER\AppData\Local\Temp\testng-eclipse-1783053958\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.api.test.datadriven.loginapiTest" class="method navigator-link" hash-for-method="loginapitest(pojouser [username=varsha, password=pass123])">loginapitest(pojouser [username=varsha, password=pass123])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +117,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.api.test.createjobapiTest" class="method navigator-link" hash-for-method="createjobtest">createjobtest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.api.test.datadriven.loginapiTest" class="method navigator-link" hash-for-method="loginapitest(pojouser [username=iamqc, password=password])">loginapitest(pojouser [username=iamqc, password=password])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.api.test.datadriven.loginapiTest" class="method navigator-link" hash-for-method="loginapitest(pojouser [username=iamfd, password=password])">loginapitest(pojouser [username=iamfd, password=password])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.api.test.datadriven.loginapiTest" class="method navigator-link" hash-for-method="loginapitest(pojouser [username=iamsup, password=password])">loginapitest(pojouser [username=iamsup, password=password])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.api.test.datadriven.loginapiTest" class="method navigator-link" hash-for-method="loginapitest(pojouser [username=iameng, password=password])">loginapitest(pojouser [username=iameng, password=password])</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -118,19 +147,107 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.api.test.createjobapiTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.api.test.datadriven.loginapiTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createjobtest">
-                  </a> <!-- createjobtest -->
-                  <span class="method-name">createjobtest</span>
+                  <a name="loginapitest(pojouser [username=varsha, password=pass123])">
+                  </a> <!-- loginapitest(pojouser [username=varsha, password=pass123]) -->
+                  <span class="method-name">loginapitest</span>
+                  <span class="parameters">(pojouser [username=varsha, password=pass123])</span>
+                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:105)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at com.api.test.datadriven.loginapiTest.loginapitest(loginapiTest.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
                   <em>
-(Verify if the API create a job id successfully)                  </em>
+(Verify if Login test for API is working as expected)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.api.test.datadriven.loginapiTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapitest(pojouser [username=iamqc, password=password])">
+                  </a> <!-- loginapitest(pojouser [username=iamqc, password=password]) -->
+                  <span class="method-name">loginapitest</span>
+                  <span class="parameters">(pojouser [username=iamqc, password=password])</span>
+                  <em>
+(Verify if Login test for API is working as expected)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapitest(pojouser [username=iamfd, password=password])">
+                  </a> <!-- loginapitest(pojouser [username=iamfd, password=password]) -->
+                  <span class="method-name">loginapitest</span>
+                  <span class="parameters">(pojouser [username=iamfd, password=password])</span>
+                  <em>
+(Verify if Login test for API is working as expected)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapitest(pojouser [username=iamsup, password=password])">
+                  </a> <!-- loginapitest(pojouser [username=iamsup, password=password]) -->
+                  <span class="method-name">loginapitest</span>
+                  <span class="parameters">(pojouser [username=iamsup, password=password])</span>
+                  <em>
+(Verify if Login test for API is working as expected)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapitest(pojouser [username=iameng, password=password])">
+                  </a> <!-- loginapitest(pojouser [username=iameng, password=password]) -->
+                  <span class="method-name">loginapitest</span>
+                  <span class="parameters">(pojouser [username=iameng, password=password])</span>
+                  <em>
+(Verify if Login test for API is working as expected)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -138,7 +255,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\USER\AppData\Local\Temp\testng-eclipse--1580545290\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\USER\AppData\Local\Temp\testng-eclipse-1783053958\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -147,7 +264,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.api.test.createjobapiTest&quot;/&gt;
+      &lt;class name=&quot;com.api.test.datadriven.loginapiTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;loginapitest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.api.test.datadriven.loginapiTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -175,7 +296,7 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">createjobtest</span>
+                <span class="method-in-group-name">loginapitest</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -183,7 +304,7 @@
               <span class="test-group-name">Smoke</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">createjobtest</span>
+                <span class="method-in-group-name">loginapitest</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -191,7 +312,7 @@
               <span class="test-group-name">api</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">createjobtest</span>
+                <span class="method-in-group-name">loginapitest</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -211,16 +332,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createjobtest')
-data.setCell(0, 2, 'com.api.test.createjobapiTest')
-data.setCell(0, 3, 5305);
+data.setCell(0, 1, 'loginapitest')
+data.setCell(0, 2, 'com.api.test.datadriven.loginapiTest')
+data.setCell(0, 3, 5187);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'loginapitest')
+data.setCell(1, 2, 'com.api.test.datadriven.loginapiTest')
+data.setCell(1, 3, 284);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'loginapitest')
+data.setCell(2, 2, 'com.api.test.datadriven.loginapiTest')
+data.setCell(2, 3, 231);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'loginapitest')
+data.setCell(3, 2, 'com.api.test.datadriven.loginapiTest')
+data.setCell(3, 3, 223);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'loginapitest')
+data.setCell(4, 2, 'com.api.test.datadriven.loginapiTest')
+data.setCell(4, 3, 210);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -246,14 +383,48 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.api.test.createjobapiTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.api.test.datadriven.loginapiTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">createjobtestsetup</span>
+                <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">createjobtest</span>
-                <span class="method-start">44 ms</span>
+                <span class="method-name">loginapitest(pojouser [username=iamfd, password=password])</span>
+                <span class="method-start">11 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">5205 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginapitest(pojouser [username=varsha, password=pass123])</span>
+                <span class="method-start">5206 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">5421 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">loginapitest(pojouser [username=iamsup, password=password])</span>
+                <span class="method-start">5422 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginapitest(pojouser [username=iamqc, password=password])</span>
+                <span class="method-start">5648 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">5648 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">5882 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">loginapitest(pojouser [username=iameng, password=password])</span>
+                <span class="method-start">5884 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

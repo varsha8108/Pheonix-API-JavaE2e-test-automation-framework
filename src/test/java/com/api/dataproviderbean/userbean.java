@@ -1,6 +1,6 @@
-package com.api.dataprovider;
+package com.api.dataproviderbean;
 
-public class pojouser {
+public class userbean {
 
 	private String username;
 	private String password;
@@ -9,7 +9,7 @@ public class pojouser {
 	}
 	
 	
-	public pojouser(){
+	public userbean(){
 	
 	}
 	
@@ -27,7 +27,7 @@ public class pojouser {
 	public String toString() {
 		return "pojouser [username=" + username + ", password=" + password + "]";
 	}
-	public pojouser(String username, String password) {
+	public userbean(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
