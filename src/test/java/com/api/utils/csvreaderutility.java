@@ -14,7 +14,7 @@ public class csvreaderutility {
 
 	private csvreaderutility() {}
 	
-	public static Iterator<userbean> loadcsvmethod(String path) {
+	public static <T> Iterator<T> loadcsvmethod(String path,Class<T> bean) {
 		
 InputStream is=Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
 		
@@ -22,13 +22,13 @@ InputStream is=Thread.currentThread().getContextClassLoader().getResourceAsStrea
 		
 		CSVReader csvreader=new CSVReader(isr);
 		
-		CsvToBean<userbean> csvbean=new CsvToBeanBuilder(csvreader)
-				.withType(userbean.class)
+		CsvToBean<T> csvbean=new CsvToBeanBuilder(csvreader)
+				.withType(bean)
 				.withIgnoreEmptyLine(true)
 				.build();
 		
-		List<userbean> pojouser=csvbean.parse();
-		return pojouser.iterator();
+		List<T> pojouser=csvbean.parse();
+		return  pojouser.iterator();
 		
 		
 		

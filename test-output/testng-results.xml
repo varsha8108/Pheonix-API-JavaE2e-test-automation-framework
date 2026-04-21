@@ -1,144 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-15T16:12:13 GST" name="Default suite" finished-at="2026-04-15T16:12:20 GST" duration-ms="6618">
+  <suite started-at="2026-04-17T16:19:57 GST" name="Default suite" finished-at="2026-04-17T16:20:04 GST" duration-ms="6251">
     <groups>
+      <group name="DDT">
+        <method signature="createjobapiTestDDT.createjobtest(com.pojo.createjobapipayload)[pri:0, instance:com.api.test.createjobapiTestDDT@6340e5f0]" name="createjobtest" class="com.api.test.createjobapiTestDDT"/>
+      </group> <!-- DDT -->
       <group name="Regression">
-        <method signature="loginapiTest.loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" name="loginapitest" class="com.api.test.datadriven.loginapiTest"/>
+        <method signature="createjobapiTestDDT.createjobtest(com.pojo.createjobapipayload)[pri:0, instance:com.api.test.createjobapiTestDDT@6340e5f0]" name="createjobtest" class="com.api.test.createjobapiTestDDT"/>
       </group> <!-- Regression -->
-      <group name="Smoke">
-        <method signature="loginapiTest.loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" name="loginapitest" class="com.api.test.datadriven.loginapiTest"/>
-      </group> <!-- Smoke -->
       <group name="api">
-        <method signature="loginapiTest.loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" name="loginapitest" class="com.api.test.datadriven.loginapiTest"/>
+        <method signature="createjobapiTestDDT.createjobtest(com.pojo.createjobapipayload)[pri:0, instance:com.api.test.createjobapiTestDDT@6340e5f0]" name="createjobtest" class="com.api.test.createjobapiTestDDT"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2026-04-15T16:12:13 GST" name="Default test" finished-at="2026-04-15T16:12:20 GST" duration-ms="6618">
-      <class name="com.api.test.datadriven.loginapiTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:13 GST" name="setup" description="User credentials object creation" finished-at="2026-04-15T16:12:13 GST" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:13 GST" name="loginapitest" description="Verify if Login test for API is working as expected" data-provider="loginapidataprovider" finished-at="2026-04-15T16:12:19 GST" duration-ms="5187" status="PASS">
+    <test started-at="2026-04-17T16:19:57 GST" name="Default test" finished-at="2026-04-17T16:20:04 GST" duration-ms="6251">
+      <class name="com.api.test.createjobapiTestDDT">
+        <test-method signature="createjobtest(com.pojo.createjobapipayload)[pri:0, instance:com.api.test.createjobapiTestDDT@6340e5f0]" started-at="2026-04-17T16:19:58 GST" name="createjobtest" description="Verify if the API create a job id successfully" data-provider="createjobapidataprovider" finished-at="2026-04-17T16:20:04 GST" duration-ms="5906" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[pojouser [username=iamfd, password=password]]]>
+                <![CDATA[createjobapipayload[mst_service_location_id=0, mst_platform_id=2, mst_warrenty_status_id=1, mst_oem_id=2, customer=customer [first_name=Romaine, last_name=Auer, mobile_number=945-414-7188, mobile_number_alt=, email_id=Corrine.Prohaska@gmail.com, email_id_alt=], customer_address=customer_address[flat_number=svamitva emerald square, apartment_name=ses, street_name=b street, landmark=big bazaar, area=bommanahalli, pincode=560003, country=India, state=Karnataka], customer_product=customer_product[dop=2026-02-01T20:00:00.000Z, serial_number=16992376670615, imei1=16992376670615, imei2=16992376670615, popurl=2026-02-01T20:00:00.000Z, product_id=3, mst_model_id=3], problems=[problems[id=2, remark=Battery issue]]]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginapitest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="setup" description="User credentials object creation" finished-at="2026-04-15T16:12:19 GST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="loginapitest" description="Verify if Login test for API is working as expected" data-provider="loginapidataprovider" finished-at="2026-04-15T16:12:19 GST" duration-ms="210" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pojouser [username=varsha, password=pass123]]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[1 expectation failed.
-Expected status code <200> but was <500>.
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 1 expectation failed.
-Expected status code <200> but was <500>.
-
-at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
-at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
-at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
-at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:105)
-at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
-at com.api.test.datadriven.loginapiTest.loginapitest(loginapiTest.java:44)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:744)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginapitest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="setup" description="User credentials object creation" finished-at="2026-04-15T16:12:19 GST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="loginapitest" description="Verify if Login test for API is working as expected" data-provider="loginapidataprovider" finished-at="2026-04-15T16:12:19 GST" duration-ms="223" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pojouser [username=iamsup, password=password]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginapitest -->
-        <test-method signature="loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="loginapitest" description="Verify if Login test for API is working as expected" data-provider="loginapidataprovider" finished-at="2026-04-15T16:12:19 GST" duration-ms="231" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pojouser [username=iamqc, password=password]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginapitest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="setup" description="User credentials object creation" finished-at="2026-04-15T16:12:19 GST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="setup" description="User credentials object creation" finished-at="2026-04-15T16:12:19 GST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginapitest(com.api.dataproviderbean.userbean)[pri:0, instance:com.api.test.datadriven.loginapiTest@1a942c18]" started-at="2026-04-15T16:12:19 GST" name="loginapitest" description="Verify if Login test for API is working as expected" data-provider="loginapidataprovider" finished-at="2026-04-15T16:12:19 GST" duration-ms="284" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pojouser [username=iameng, password=password]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginapitest -->
-      </class> <!-- com.api.test.datadriven.loginapiTest -->
+        </test-method> <!-- createjobtest -->
+      </class> <!-- com.api.test.createjobapiTestDDT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
