@@ -8,7 +8,7 @@ public record createjobapipayload (
 	 int mst_platform_id,
 	 int mst_warrenty_status_id,
 	 int mst_oem_id,
-	 customerpojo customer,
+	 customer customer,
 	 customer_address customer_address,
 	 customer_product customer_product,
 	 List<problems> problems
