@@ -1,0 +1,45 @@
+[
+	{
+    "mst_service_location_id": 0,
+    "mst_platform_id": 2,
+    "mst_warrenty_status_id": 1,
+    "mst_oem_id": 2,
+    "customer": {
+        "first_name": "Apramey",
+        "last_name": "sk",
+        "mobile_number": "971568964498",
+        "mobile_number_alt": "",
+        "email_id": "appu@gmail.com",
+        "email_id_alt": ""
+    },
+    "customer_address": {
+        "flat_number": "svamitva emerald square",
+        "apartment_name": "ses",
+        "street_name": "b street",
+        "landmark": "big bazaar",
+        "area": "bommanahalli",
+        "pincode": "560003",
+        "country": "India",
+        "state": "Karnataka"
+    },
+    "customer_product": {
+        "dop": "2026-02-01T20:00:00.000Z",
+        "serial_number": "16992376670649",
+        "imei1": "16992376670649",
+        "imei2": "16992376670649",
+        "popurl": "2026-02-01T20:00:00.000Z",
+        "product_id": 3,
+        "mst_model_id": 3
+    },
+    "problems": [
+        {
+            "id": 2,
+            "remark": "Battery issue"
+        },
+		{
+		            "id": 1,
+		            "remark": "UI issue"
+		        }
+    ]
+}
+]

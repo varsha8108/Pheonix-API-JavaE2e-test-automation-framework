@@ -64,4 +64,13 @@ public static Iterator<usercred> loginapijsondataprovider() {
 	 
 }
 
+
+
+@DataProvider(name = "createjobapijsondataprovider")
+public static Iterator<createjobapipayload> createjobapijsondataprovider() {
+	
+	return jsonreaderutility.loadjson("testdata/createjob.json", createjobapipayload[].class);
+	
+	 
+}
 }

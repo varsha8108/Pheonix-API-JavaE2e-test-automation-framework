@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pojo.createjobapipayload;
 import com.pojo.usercred;
 
 public class jsonreaderutility {
@@ -16,7 +17,7 @@ public class jsonreaderutility {
 	public static <T>Iterator<T> loadjson(String filename, Class<T[]> c) {
 	
 	
-	InputStream is= Thread.currentThread().getContextClassLoader().getResourceAsStream("testdata/demo.json");
+	InputStream is= Thread.currentThread().getContextClassLoader().getResourceAsStream(filename);
 	
 	
 	// use object mapper to read the value from the .json file and map to usercredentials.java pojo(record)
@@ -35,4 +36,6 @@ public class jsonreaderutility {
 	
 	return list.iterator();
 }
+	
+	
 }
