@@ -11,7 +11,9 @@ import com.api.dataproviderbean.userbean;
 import com.api.utils.createjobbeanmapper;
 import com.api.utils.csvreaderutility;
 import com.api.utils.fakerdatagenerator;
+import com.api.utils.jsonreaderutility;
 import com.pojo.createjobapipayload;
+import com.pojo.usercred;
 
 public class dataproviderutils {
 
@@ -54,5 +56,21 @@ public static Iterator<createjobapipayload> createjobapifakerdataprovider() {
 }
 
 
+@DataProvider(name = "loginapijsondataprovider")
+public static Iterator<usercred> loginapijsondataprovider() {
+	
+	return jsonreaderutility.loadjson("testdata/demo.json", usercred[].class);
+	
+	 
+}
 
+
+
+@DataProvider(name = "createjobapijsondataprovider")
+public static Iterator<createjobapipayload> createjobapijsondataprovider() {
+	
+	return jsonreaderutility.loadjson("testdata/createjob.json", createjobapipayload[].class);
+	
+	 
+}
 }

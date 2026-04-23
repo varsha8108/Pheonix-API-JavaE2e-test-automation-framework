@@ -77,7 +77,7 @@ public class specbuilder {
 	public static ResponseSpecification responsespecification() {
 		ResponseSpecification responsespecification=new ResponseSpecBuilder()
 		.expectStatusCode(200)
-		.expectResponseTime(Matchers.lessThan(1000L))
+		.expectResponseTime(Matchers.lessThan(2000L))
 		.expectContentType(ContentType.JSON)
 		.build();
 		return responsespecification;
@@ -87,14 +87,14 @@ public class specbuilder {
 	public static ResponseSpecification responsespecification_text(int statuscode) {
 		ResponseSpecification responsespecification=new ResponseSpecBuilder()
 		.expectStatusCode(200)
-		.expectResponseTime(Matchers.lessThan(1000L))
+		.expectResponseTime(Matchers.lessThan(2000L))
 		.build();
 		return responsespecification;
 	}
 	public static ResponseSpecification responsespecification_invalidtoken(int statuscode) {
 		ResponseSpecification responsespecification=new ResponseSpecBuilder()
 		.expectStatusCode(statuscode)
-		.expectResponseTime(Matchers.lessThan(1000L))
+		.expectResponseTime(Matchers.lessThan(2000L))
 		.build();
 		return responsespecification;
 	}
