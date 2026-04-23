@@ -7,11 +7,8 @@ import org.testng.annotations.Test;
 import com.api.constants.Role;
 import com.api.utils.createjobbeanmapper;
 import com.api.utils.datetime;
-import com.api.utils.fakerdatagenerator;
 import com.api.utils.specbuilder;
-import com.github.javafaker.Faker;
 import com.pojo.createjobapipayload;
-import com.pojo.customer;
 import com.pojo.customerpojo;
 import com.pojo.customer_address;
 import com.pojo.customer_product;
@@ -26,36 +23,35 @@ import static io.restassured.RestAssured.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-public class createjobapiTest {
-	private createjobapipayload payload;
+public class createjobapiTestDDTfaker {
+	private createjobapipayload c;
 	
 	
-	@BeforeMethod(description = "Set up method for createjob payload")
-	public void createjobtestsetup() {
-//		customer customer=new customer("Varsha","k","863-487-1098","863-427-1098","Dolly83@gmail.com","Dolly83@gmail.com");
+//	@BeforeMethod(description = "Set up method for createjob payload")
+//	public void createjobtestsetup() {
+//		customerpojo customer=new customerpojo("Varsha","k","863-487-1098","863-427-1098","Dolly83@gmail.com","Dolly83@gmail.com");
 //		customer_address customer_address=new customer_address("svamitva soul spring square", "ses123", "b street", "big bazaar", "bommanahalli", "560003", "India", "Karnataka");
 //		customer_product customer_product=new customer_product(datetime.gettimepast(10), "46505921665210", "46505921665210", "46505921665210", datetime.gettimepast(10), 3, 3);
 //		problems problem=new problems(1,"Battery issue");
 //		List<problems> problemslist=new ArrayList();
 //		problemslist.add(problem);
 //		 c=new createjobapipayload(0,2,1,2,customer,customer_address,customer_product,problemslist);
-//
-		payload=fakerdatagenerator.generatefakerdata();
-	}
+//	}
+//	
 	
 	
 	
-	
-@Test(description = "Verify if the API create a job id successfully",groups = {"api","Regression","Smoke"})
-	public void createjobtest() throws IOException {
+@Test(description = "Verify if the API create a job id successfully",groups = {"api","Regression","DDT"},
+dataProviderClass = com.dataprovider.dataproviderutils.class,
+dataProvider = "createjobapifakerdataprovider")
+	public void createjobtest(createjobapipayload cp) throws IOException {
 	
 	Response r=
 	given()
-	.spec(specbuilder.requestspecwithobject_role(Role.FD, payload))
+	.spec(specbuilder.requestspecwithobject_role(Role.FD, cp))
 	.contentType(ContentType.JSON)
-	.body(payload)
+	//.body(c)
 	.log().headers()
 	.log().body()
 	.log().method()

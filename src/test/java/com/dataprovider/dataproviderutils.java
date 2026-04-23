@@ -10,6 +10,7 @@ import com.api.dataproviderbean.createjobbean;
 import com.api.dataproviderbean.userbean;
 import com.api.utils.createjobbeanmapper;
 import com.api.utils.csvreaderutility;
+import com.api.utils.fakerdatagenerator;
 import com.pojo.createjobapipayload;
 
 public class dataproviderutils {
@@ -44,6 +45,13 @@ public static Iterator<createjobapipayload> createjobapidataprovider() {
 	return payloadlist.iterator();
 }
 
+@DataProvider(name = "createjobapifakerdataprovider")
+public static Iterator<createjobapipayload> createjobapifakerdataprovider() {
+	
+	Iterator<createjobapipayload> fakerdatagen=fakerdatagenerator.generatefakerdata(10);
+	
+	return fakerdatagen;
+}
 
 
 
