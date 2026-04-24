@@ -1,5 +1,6 @@
 package com.dataprovider;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,8 +11,10 @@ import com.api.dataproviderbean.createjobbean;
 import com.api.dataproviderbean.userbean;
 import com.api.utils.createjobbeanmapper;
 import com.api.utils.csvreaderutility;
+import com.api.utils.excelpractise2;
 import com.api.utils.fakerdatagenerator;
 import com.pojo.createjobapipayload;
+import com.pojo.usercred;
 
 public class dataproviderutils {
 
@@ -53,6 +56,12 @@ public static Iterator<createjobapipayload> createjobapifakerdataprovider() {
 	return fakerdatagen;
 }
 
-
+@DataProvider(name = "loginapiexceldataprovider")
+public static Iterator<usercred> loginapiexceldataprovider() throws IOException {
+	
+	return excelpractise2.loadtestdatawithexcel();
+	
+}
+	
 
 }
